@@ -1,8 +1,4 @@
-h1 {
-  color: orange;
-  font-family: "Lato";
-}
-img {
-  width: 200px;
-  height: 200px;
-}
+@import "variables";
+@import "utilities";
+
+@include reset
