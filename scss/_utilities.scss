@@ -34,6 +34,24 @@
   text-align: center;
 }
 
+%center-bg {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+%card-hover {
+  .job-card__title, .job-card__cover, .job-card__description  {
+    opacity: 0;
+  }
+
+  &:hover {
+    .job-card__title, .job-card__cover , .job-card__description {
+      opacity: 1;
+    }
+  }
+}
+
 // btns
 .btn {
   padding: 0.6rem 1rem;

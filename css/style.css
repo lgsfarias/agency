@@ -2,10 +2,23 @@
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
-.services-container h2 {
+.jobs-container h2, .services-container h2 {
   font-size: 3rem;
   margin-top: 3rem;
   text-align: center;
+}
+
+.jobs-container .other-jobs .job-card, .jobs-container .jobs-list .first-job {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.jobs-container .other-jobs .job-card .job-card__title, .jobs-container .jobs-list .first-job .job-card__title, .jobs-container .other-jobs .job-card .job-card__cover, .jobs-container .jobs-list .first-job .job-card__cover, .jobs-container .other-jobs .job-card .job-card__description, .jobs-container .jobs-list .first-job .job-card__description {
+  opacity: 0;
+}
+.jobs-container .other-jobs .job-card:hover .job-card__title, .jobs-container .jobs-list .first-job:hover .job-card__title, .jobs-container .other-jobs .job-card:hover .job-card__cover, .jobs-container .jobs-list .first-job:hover .job-card__cover, .jobs-container .other-jobs .job-card:hover .job-card__description, .jobs-container .jobs-list .first-job:hover .job-card__description {
+  opacity: 1;
 }
 
 .btn {
@@ -144,6 +157,49 @@ li {
 }
 .services-container .services-card-container .services-card:hover {
   box-shadow: 0 1px 10px #CCC;
+}
+
+.jobs-container {
+  background-color: #E5EAFF;
+  padding: 3rem;
+}
+.jobs-container .jobs-list {
+  display: flex;
+  padding: 2rem 0;
+}
+.jobs-container .jobs-list .first-job {
+  width: 30%;
+  height: 415px;
+  background-image: url("../img/job1.jpg");
+  position: relative;
+  cursor: pointer;
+  transition: 0.5s ease-in-out;
+  margin-right: 15px;
+}
+.jobs-container .other-jobs {
+  display: flex;
+  flex-wrap: wrap;
+  width: 68%;
+}
+.jobs-container .other-jobs .job-card {
+  width: 46%;
+  height: 200px;
+  position: relative;
+  cursor: pointer;
+  margin-bottom: 15px;
+  margin-right: 15px;
+}
+.jobs-container .other-jobs #job2 {
+  background-image: url("../img/job2.jpg");
+}
+.jobs-container .other-jobs #job3 {
+  background-image: url("../img/job3.jpg");
+}
+.jobs-container .other-jobs #job4 {
+  background-image: url("../img/job4.jpg");
+}
+.jobs-container .other-jobs #job5 {
+  background-image: url("../img/job5.jpg");
 }
 
 /*# sourceMappingURL=style.css.map */
