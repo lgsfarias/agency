@@ -9,6 +9,16 @@
   background-size: cover;
   background-position: center;
 
+  @include mobile {
+    height: 100vh;
+  }
+
+  nav {
+    @include mobile {
+      display: none;
+    }
+  }
+
   .nav-container {
     display: flex;
     justify-content: space-between;
@@ -19,6 +29,10 @@
     padding: 1.5rem 2rem;
     background-color: $black;
     z-index: 10;
+
+    @include mobile {
+      padding: 1rem;
+    }
 
     .brand {
       color: $light-color;
@@ -46,16 +60,26 @@
       color: #FFF;
       font-size: 2rem;
       display: none;
+
+      @include mobile {
+        display: block;
+      }
     }
   }
 
   .title-container {
+    position: relative;
     color: $light-color;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
     height: 100%;
+
+    @include mobile {
+      text-align: center; 
+      padding: 2rem;
+    }
 
     h2 {
       font-size: 3rem;
@@ -67,6 +91,20 @@
       margin-top: 1rem;
       @extend %title-text-shadow;
     }
+
+    .fas.fa-chevron-down {
+      display: none;
+      position: absolute;
+      bottom: 2rem;
+      font-size: 2rem;
+      margin-top: 2rem;
+      @extend %title-text-shadow;
+      animation: arrow-animation 1s infinite;
+
+      @include mobile {
+        display: block;
+      }
+    }
   }
 }
 
@@ -74,6 +112,10 @@
   text-align: center;
   padding: 2rem;
   margin-bottom: 2rem;
+
+  @include mobile {
+    padding: 2rem 0;
+  }
   
   h2 {
     @extend %section-title;
@@ -91,6 +133,11 @@
       padding: 2rem;
       border: 1px solid #CCC;
       transition: .3s ease-in-out;
+
+      @include mobile {
+        width: 100%;
+        margin-bottom: 2rem;
+      }
 
       i {
         font-size: 4rem;
@@ -121,6 +168,10 @@
   background-color: $secondary-bg;
   padding: 3rem;
 
+  @include mobile {
+    padding: 2rem;
+  }
+
   h2 {
     @extend %section-title;
   }
@@ -128,6 +179,10 @@
   .jobs-list {
     display: flex;
     padding: 2rem 0;  
+
+    @include mobile {
+      flex-direction: column;
+    }
 
     .first-job {
       width: 30%;
@@ -137,8 +192,13 @@
       cursor: pointer;
       transition: .5s ease-in-out;
       margin-right: 15px;
+      margin-bottom: 15px;
       @extend %center-bg;
       @extend %card-hover;
+
+      @include mobile {
+        @include card-mobile;
+      }
     }
   }
 
@@ -146,6 +206,11 @@
     display: flex;
     flex-wrap: wrap;
     width: 68%;
+
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+    }
 
     .job-card {
       width: 46%;
@@ -156,6 +221,10 @@
       margin-right: 15px;
       @extend %center-bg;
       @extend %card-hover;
+
+      @include mobile {
+       @include card-mobile;
+      }
     }
 
     #job2 {
@@ -215,6 +284,11 @@ footer {
     display: flex;
     flex-wrap: wrap;
 
+    @include mobile {
+      width: 100%;
+      flex-direction: column;
+    }
+
     .footer-title {
       color: #FFF;
       font-weight: bold;
@@ -224,20 +298,40 @@ footer {
 
   .footer-desc-container, .footer-links-container {
     width: 50%;
+
+    @include mobile {
+      width: 100%;
+      margin-bottom: 2rem;
+      text-align: center;
+    }
   }
 
   .footer-desc-container {
     p {
       width: 80%;
       line-height: 1.3rem;
+
+      @include mobile {
+        width: 100%;
+      }
     }
   }
 
   .footer-links-container {
     display: flex;
 
+    @include mobile {
+      flex-direction: column;
+      justify-content: center;
+    }
+
     &__list {
       padding: 0 1rem;
+
+      @include mobile {
+        padding: 0;
+        margin-bottom: 2rem;
+      }
 
       li {
         margin-bottom: 0.5rem;
@@ -257,6 +351,10 @@ footer {
   .footer-copy-container {
     width: 100%;
     margin-top: 3rem;
+
+    @include mobile {
+      text-align: center;
+    }
 
     p {
       margin-bottom: 1rem;

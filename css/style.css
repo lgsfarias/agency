@@ -1,4 +1,4 @@
-#main-banner .title-container h1, #main-banner .title-container h2 {
+#main-banner .title-container .fas.fa-chevron-down, #main-banner .title-container h1, #main-banner .title-container h2 {
   text-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
 }
 
@@ -16,6 +16,11 @@
 
 .jobs-container .other-jobs .job-card .job-card__title, .jobs-container .jobs-list .first-job .job-card__title, .jobs-container .other-jobs .job-card .job-card__cover, .jobs-container .jobs-list .first-job .job-card__cover, .jobs-container .other-jobs .job-card .job-card__description, .jobs-container .jobs-list .first-job .job-card__description {
   opacity: 0;
+}
+@media (max-width: 768px) {
+  .jobs-container .other-jobs .job-card .job-card__title, .jobs-container .jobs-list .first-job .job-card__title, .jobs-container .other-jobs .job-card .job-card__cover, .jobs-container .jobs-list .first-job .job-card__cover, .jobs-container .other-jobs .job-card .job-card__description, .jobs-container .jobs-list .first-job .job-card__description {
+    opacity: 1;
+  }
 }
 .jobs-container .other-jobs .job-card:hover .job-card__title, .jobs-container .jobs-list .first-job:hover .job-card__title, .jobs-container .other-jobs .job-card:hover .job-card__cover, .jobs-container .jobs-list .first-job:hover .job-card__cover, .jobs-container .other-jobs .job-card:hover .job-card__description, .jobs-container .jobs-list .first-job:hover .job-card__description {
   opacity: 1;
@@ -46,6 +51,17 @@
   padding: 1rem 1.5rem;
 }
 
+@keyframes arrow-animation {
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+}
 * {
   margin: 0;
   padding: 0;
@@ -67,6 +83,16 @@ li {
   background-size: cover;
   background-position: center;
 }
+@media (max-width: 768px) {
+  #main-banner {
+    height: 100vh;
+  }
+}
+@media (max-width: 768px) {
+  #main-banner nav {
+    display: none;
+  }
+}
 #main-banner .nav-container {
   display: flex;
   justify-content: space-between;
@@ -77,6 +103,11 @@ li {
   padding: 1.5rem 2rem;
   background-color: #000;
   z-index: 10;
+}
+@media (max-width: 768px) {
+  #main-banner .nav-container {
+    padding: 1rem;
+  }
 }
 #main-banner .nav-container .brand {
   color: #FFF;
@@ -107,13 +138,25 @@ li {
   font-size: 2rem;
   display: none;
 }
+@media (max-width: 768px) {
+  #main-banner .nav-container .fas.fa-bars {
+    display: block;
+  }
+}
 #main-banner .title-container {
+  position: relative;
   color: #FFF;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   height: 100%;
+}
+@media (max-width: 768px) {
+  #main-banner .title-container {
+    text-align: center;
+    padding: 2rem;
+  }
 }
 #main-banner .title-container h2 {
   font-size: 3rem;
@@ -122,11 +165,29 @@ li {
   font-size: 4rem;
   margin-top: 1rem;
 }
+#main-banner .title-container .fas.fa-chevron-down {
+  display: none;
+  position: absolute;
+  bottom: 2rem;
+  font-size: 2rem;
+  margin-top: 2rem;
+  animation: arrow-animation 1s infinite;
+}
+@media (max-width: 768px) {
+  #main-banner .title-container .fas.fa-chevron-down {
+    display: block;
+  }
+}
 
 .services-container {
   text-align: center;
   padding: 2rem;
   margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+  .services-container {
+    padding: 2rem 0;
+  }
 }
 .services-container .services-card-container {
   display: flex;
@@ -140,6 +201,12 @@ li {
   padding: 2rem;
   border: 1px solid #CCC;
   transition: 0.3s ease-in-out;
+}
+@media (max-width: 768px) {
+  .services-container .services-card-container .services-card {
+    width: 100%;
+    margin-bottom: 2rem;
+  }
 }
 .services-container .services-card-container .services-card i {
   font-size: 4rem;
@@ -163,9 +230,19 @@ li {
   background-color: #E5EAFF;
   padding: 3rem;
 }
+@media (max-width: 768px) {
+  .jobs-container {
+    padding: 2rem;
+  }
+}
 .jobs-container .jobs-list {
   display: flex;
   padding: 2rem 0;
+}
+@media (max-width: 768px) {
+  .jobs-container .jobs-list {
+    flex-direction: column;
+  }
 }
 .jobs-container .jobs-list .first-job {
   width: 30%;
@@ -175,11 +252,26 @@ li {
   cursor: pointer;
   transition: 0.5s ease-in-out;
   margin-right: 15px;
+  margin-bottom: 15px;
+}
+@media (max-width: 768px) {
+  .jobs-container .jobs-list .first-job {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
 }
 .jobs-container .other-jobs {
   display: flex;
   flex-wrap: wrap;
   width: 68%;
+}
+@media (max-width: 768px) {
+  .jobs-container .other-jobs {
+    width: 100%;
+    flex-direction: column;
+  }
 }
 .jobs-container .other-jobs .job-card {
   width: 46%;
@@ -188,6 +280,14 @@ li {
   cursor: pointer;
   margin-bottom: 15px;
   margin-right: 15px;
+}
+@media (max-width: 768px) {
+  .jobs-container .other-jobs .job-card {
+    width: 100%;
+    height: 200px;
+    margin-right: 0;
+    margin-bottom: 2rem;
+  }
 }
 .jobs-container .other-jobs #job2 {
   background-image: url("../img/job2.jpg");
@@ -237,6 +337,12 @@ footer .footer-container {
   display: flex;
   flex-wrap: wrap;
 }
+@media (max-width: 768px) {
+  footer .footer-container {
+    width: 100%;
+    flex-direction: column;
+  }
+}
 footer .footer-container .footer-title {
   color: #FFF;
   font-weight: bold;
@@ -245,15 +351,39 @@ footer .footer-container .footer-title {
 footer .footer-desc-container, footer .footer-links-container {
   width: 50%;
 }
+@media (max-width: 768px) {
+  footer .footer-desc-container, footer .footer-links-container {
+    width: 100%;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+}
 footer .footer-desc-container p {
   width: 80%;
   line-height: 1.3rem;
 }
+@media (max-width: 768px) {
+  footer .footer-desc-container p {
+    width: 100%;
+  }
+}
 footer .footer-links-container {
   display: flex;
 }
+@media (max-width: 768px) {
+  footer .footer-links-container {
+    flex-direction: column;
+    justify-content: center;
+  }
+}
 footer .footer-links-container__list {
   padding: 0 1rem;
+}
+@media (max-width: 768px) {
+  footer .footer-links-container__list {
+    padding: 0;
+    margin-bottom: 2rem;
+  }
 }
 footer .footer-links-container__list li {
   margin-bottom: 0.5rem;
@@ -268,6 +398,11 @@ footer .footer-links-container__list li a:hover {
 footer .footer-copy-container {
   width: 100%;
   margin-top: 3rem;
+}
+@media (max-width: 768px) {
+  footer .footer-copy-container {
+    text-align: center;
+  }
 }
 footer .footer-copy-container p {
   margin-bottom: 1rem;
